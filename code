@@ -1,0 +1,32 @@
+#include <iostream>
+#include <vector>
+#include <stack>
+
+using namespace std;
+
+vector<int> vec;
+stack<int> st;
+
+int main()
+{
+    int n, i;
+    
+    cin >> n;
+    vec.resize(n);
+    
+    for(auto& i : vec)
+    {
+        cin >> i;
+        st.push(i);
+    }
+    
+    for(i = 0; i < n; i ++)
+    {
+        if(vec[i] % st.top() == 0)
+        {
+            cout << vec[i] << ' ';
+        }
+    }
+    
+    return 0;
+}
